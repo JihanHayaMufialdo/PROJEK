@@ -4,14 +4,14 @@ using namespace std;
 string pengunjung[3][5] = {
     {"1095","Jihan Haya Mufialdo","Perempuan","18 tahun","Sudah Vaksin"},
     {"1008","Nauval Hanif","Laki-Laki","17 tahun","Sudah Vaksin"},
-	{"1062","Firman Ahmad Bayumi","Laki-Laki","18 tahun","Sudah Vaksin"}
+    {"1062","Firman Ahmad Bayumi","Laki-Laki","18 tahun","Sudah Vaksin"}
 };
 
 string mal[20][5] = {
 	{"1.","Grand Indonesia","Jl. M.H. Thamrin No. 1, Kebon Kacang, Tanah Abang","10.00","20.00"},
 	{"2.","Plaza Indonesia","Jl. MH. Thamrin, Kav. 28-30, Gondangdia, Menteng","10.00","20.00"},
 	{"3.","Senayan City","Jl. Asia Afrika No. 19, Gelora, Tanah Abang","10.00","20.00"},
-    {"4.","Plaza Senayan","Jl. Asia Afrika No.8, Gelora, Tanah Abang","10.00","20.00"},
+        {"4.","Plaza Senayan","Jl. Asia Afrika No.8, Gelora, Tanah Abang","10.00","20.00"},
 	{"5.","Mal Taman Anggrek","Jl. Letjen. S. Parman Kav. 28, Tanjung Duren Selatan, Grogol Petamburan","10.00","20.00"},
 	{"6.","Lippo Mall Puri","Jl. Puri Indah Raya No. 3, Kembangan Selatan, Kembangan","10.00","20.00"},
 	{"7.","Central Park","Jl. Letjen. S. Parman Kav. 28, Tanjung Duren Selatan, Grogol","10.00","20.00"},
