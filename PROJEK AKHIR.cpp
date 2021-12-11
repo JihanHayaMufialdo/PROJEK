@@ -112,9 +112,9 @@ void menu(){
 	judul();
 	
 	cout << "\n\t\t\t\t\t    Masukkan Nickname Anda : ";
-	cin.ignore();		    // agar dapat melakukan input kembali dengan fungsi getline 
-						    // setelah melakukan input dengan fungsi cin.
-	getline(cin,pemain);	// memasukkan data pemain.
+	cin.ignore();		  		// agar dapat melakukan input kembali dengan fungsi getline 
+						// setelah melakukan input dengan fungsi cin.
+	getline(cin,pemain);			// memasukkan data pemain.
 	system("cls");
 	
 	//TINGKAT
@@ -126,7 +126,7 @@ void menu(){
 	cout << "\t\t\t\t\t\t\t1. Mudah\n";
 	cout << "\t\t\t\t\t\t\t2. Sulit\n";
 	cout << "\t\t\t\t\t\t\t-> ";
-	cin >> level;			// memasukkan pilihan level.
+	cin >> level;				// memasukkan pilihan level.
 	
 	switch(level){
 		case 1 :
@@ -191,10 +191,10 @@ void map1(){
 	system("cls");
 	
 	string map[17][20];		// array 2 dimensi untuk menyimpan koordinat map.
-	int x,y;				// x menyimpan koordinat baris, y menyimpan koordinat kolom (pada array).
+	int x,y;			// x menyimpan koordinat baris, y menyimpan koordinat kolom (pada array).
 	int a=15,b=18;			// koordinat awal pacman.
 	int score=0;			// mengembalikan nilai score secara default.
-	char move;				// deklarasi variabel move.
+	char move;			// deklarasi variabel move.
 	
 // BENTUK MAP 1
 	// menyimpan koordinat dinding dan rintangan pada map.
@@ -311,66 +311,66 @@ void map1(){
 		if(move=='s'||move=='S'){
 			a++;				 // koordinat baris akan bertambah.
 			if(a>0){			 // ketika a>0 (dinding), maka karakter titik(.)
-				map[a-1][b]=" "; // pada posisi awal akan dirubah menjadi kosong( ).
-			}
+				map[a-1][b]=" "; 	 // pada posisi awal akan dirubah menjadi kosong( ).
+			} 
 		}
 		else if(move=='w'||move=='W'){
 			a--;				 // koordinat baris akan berkurang.
 			if(a>0){			 // ketika a>0 (dinding), maka karakter titik(.)
-				map[a+1][b]=" "; // pada posisi awal akan dirubah menjadi kosong( ).
+				map[a+1][b]=" "; 	 // pada posisi awal akan dirubah menjadi kosong( ).
 			}
 		}
 		else if(move=='a'||move=='A'){		 
 			b--;				 // koordinat kolom akan berkurang.
 			if(b>0){			 // ketika b>0 (dinding), maka karakter titik(.)
-				map[a][b+1]=" "; // pada posisi awal akan dirubah menjadi kosong( ).
+				map[a][b+1]=" ";	 // pada posisi awal akan dirubah menjadi kosong( ).
 			}
 		}
 		else if(move=='d'||move=='D'){
 			b++;				 // koordinat kolom akan bertambah.
 			if(b>0){			 // ketika b>0 (dinding), maka karakter titik(.)
-				map[a][b-1]=" "; // pada posisi awal akan dirubah menjadi kosong( ).
+				map[a][b-1]=" "; 	 // pada posisi awal akan dirubah menjadi kosong( ).
 			}
 		}
 		
-		if(map[a][b]=="."){    	 // ketika koordinat pacman = titik(.), maka score bertambah 1.
+		if(map[a][b]=="."){    	 		 // ketika koordinat pacman = titik(.), maka score bertambah 1.
 			score+=1;
 		}
 		
-		if(map[a][b]=="#"){ 	 // ketika koordinat pacman = pagar/rintangan, maka pemain kalah.
+		if(map[a][b]=="#"){ 			 // ketika koordinat pacman = pagar/rintangan, maka pemain kalah.
 			system("cls");
 			cout << "\n\n\n\n\n\t\t\t\t\t\t         " << pemain;
 			cout << "\n\t\t\t\t\t\t         " << " KALAH"; 
 			cout << "\n\n\t\t\t\t\t\t         Score : " << score;
-			lagi();			     // memanggil prosedur fungsi lagi.
+			lagi();			    	 // memanggil prosedur fungsi lagi.
 			break;	
 		}
 		
-		if(map[a][b]=="0" && score>=50){  	    //ketika koordinat pacman = 0, dan score >= 50, maka pemain menang.
+		if(map[a][b]=="0" && score>=50){  	  //ketika koordinat pacman = 0, dan score >= 50, maka pemain menang.
 			system("cls");
 			cout << "\n\n\n\n\n\t\t\t\t\t\t          " << pemain; 
 			cout << "\n\t\t\t\t\t\t         " << " MENANG";
 			cout << "\n\n\t\t\t\t\t\t         Score : " << score;
-			lagi(); 							// memanggil prosedur fungsi lagi.
+			lagi(); 			  // memanggil prosedur fungsi lagi.
 			break;
 		}
-		else if(map[a][b]=="0" && score<50){	//ketika koordinat pacman = 0, tetapi score < 50, maka pemain kalah.
+		else if(map[a][b]=="0" && score<50){	  //ketika koordinat pacman = 0, tetapi score < 50, maka pemain kalah.
 			system("cls");
 			cout << "\n\n\n\n\n\t\t\t\t\t\t\t  " << pemain; 
 			cout << "\n\t\t\t\t\t\t   " << " TIDAK SAMPAI TARGET";
 			cout << "\n\n\t\t\t\t\t\t         Score : " << score;
-			lagi(); 							// memanggil prosedur fungsi lagi.
+			lagi(); 			  // memanggil prosedur fungsi lagi.
 			break;
 		}
 		
 		system("cls");
 		
-		map[a][b]="@";						// menampilkan kembali karakter pacman setiap digerakkan.
+		map[a][b]="@";				  // menampilkan kembali karakter pacman setiap digerakkan.
 		
-		cout << pemain << " : " << score;	// menampilkan kembali score setiap pacman digerakkan.
+		cout << pemain << " : " << score;	  // menampilkan kembali score setiap pacman digerakkan.
 		cout << "\n\n";
 	
-		for(x=0;x<17;x++){  				// menampilkan kembali map setiap pacman digerakkan.
+		for(x=0;x<17;x++){  			  // menampilkan kembali map setiap pacman digerakkan.
 			for(y=0;y<20;y++){
 				cout << map [x][y] << " ";
 			}
@@ -395,10 +395,10 @@ void map2(){
 	system("cls");
 	
 	string map[17][20];		// array 2 dimensi untuk menyimpan koordinat map.
-	int x,y;				// x menyimpan koordinat baris, y menyimpan koordinat kolom (pada array).
+	int x,y;			// x menyimpan koordinat baris, y menyimpan koordinat kolom (pada array).
 	int n=3, m=2;			// koordinat awal pacman.
 	int score=0;			// mengembalikan nilai score secara default.
-	char move;				// deklarasi variabel move.
+	char move;			// deklarasi variabel move.
 
 // BENTUK MAP 2
 	// menyimpan koordinat dinding dan rintangan pada map.
@@ -494,25 +494,25 @@ void map2(){
 		if(move=='s'||move=='S'){
 			n++;					// koordinat baris akan bertambah.
 			if(n>0){				// ketika n>0 (dinding), maka karakter titik(.)
-				map[n-1][m]=" ";	// pada posisi awal akan dirubah menjadi kosong( ).
+				map[n-1][m]=" ";		// pada posisi awal akan dirubah menjadi kosong( ).
 			}
 		}
 		else if(move=='w'||move=='W'){
 			n--;					// koordinat baris akan berkurang.
 			if(n>0){				// ketika n>0 (dinding), maka karakter titik(.)
-				map[n+1][m]=" ";	// pada posisi awal akan dirubah menjadi kosong( ).
+				map[n+1][m]=" ";		// pada posisi awal akan dirubah menjadi kosong( ).
 			}
 		}
 		else if(move=='a'||move=='A'){
 			m--;					// koordinat kolom akan berkurang.
 			if(m>0){				// ketika m>0 (dinding), maka karakter titik(.)
-				map[n][m+1]=" ";	// pada posisi awal akan dirubah menjadi kosong( ).
+				map[n][m+1]=" ";		// pada posisi awal akan dirubah menjadi kosong( ).
 				}
 		}
 		else if(move=='d'||move=='D'){
 			m++;					// koordinat kolom akan bertambah.
 			if(m>0){				// ketika n>0 (dinding), maka karakter titik(.)
-				map[n][m-1]=" ";	// pada posisi awal akan dirubah menjadi kosong( ).
+				map[n][m-1]=" ";		// pada posisi awal akan dirubah menjadi kosong( ).
 				}
 		}
 	
@@ -521,7 +521,7 @@ void map2(){
 			cout << "\n\n\n\n\n\t\t\t\t\t\t        " << pemain;
 			cout << "\n\t\t\t\t\t\t         " << " MENANG";
 			cout << "\n\n\t\t\t\t\t\t        Score : " << score;
-			lagi(); 	// memanggil prosedur fungsi lagi.
+			lagi(); 				// memanggil prosedur fungsi lagi.
 			break;
 		}
 		else if(map[n][m]=="0" &&score<50){		//ketika koordinat pacman = 0, tetapi score < 50, maka pemain kalah.
@@ -529,16 +529,16 @@ void map2(){
 			cout << "\n\n\n\n\n\t\t\t\t\t\t\t  " << pemain;
 			cout << "\n\t\t\t\t\t\t   " << " TIDAK SAMPAI TARGET";
 			cout << "\n\n\t\t\t\t\t\t        Score : " << score;
-			lagi(); 							// memanggil prosedur fungsi lagi.
+			lagi(); 				// memanggil prosedur fungsi lagi.
 			break;
 		}
 		
-		if(map[n][m]=="#"){		// ketika koordinat pacman = pagar/rintangan, maka pemain kalah.
+		if(map[n][m]=="#"){				// ketika koordinat pacman = pagar/rintangan, maka pemain kalah.
 			system("cls");
 			cout << "\n\n\n\n\n\t\t\t\t\t\t         " << pemain;
 			cout << "\n\t\t\t\t\t\t         " << " KALAH";
 			cout << "\n\n\t\t\t\t\t\t         Score : " << score;
-			lagi(); 			// memanggil prosedur fungsi lagi.
+			lagi(); 				// memanggil prosedur fungsi lagi.
 			break;
 		}
 		
