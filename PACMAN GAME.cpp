@@ -10,10 +10,6 @@
    atau menggunakan IDE : dev-c++
 */ 
 
-#include <iostream>             // untuk menampilkan perintah cout, cin, endl.
-#include <conio.h>              // untuk menampilkan fungsi getche().
-#include <ncurses\ncurses.h>    // untuk menampilkan perintah mvprintw, scanw.
-#include <windows.h>            // untuk menampilkan fungsi Sleep().
 
 using namespace std;
 
