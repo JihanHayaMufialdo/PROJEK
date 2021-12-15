@@ -21,11 +21,7 @@ using namespace std;
 string pemain;		
 
 // fungsi 	
-void judul();  
-void menu();
-void lagi();
-void map1();
-void map2();
+
 
 // fungsi utama
 int main(){	
